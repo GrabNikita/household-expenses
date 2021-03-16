@@ -14,7 +14,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        return view('markets', ['markets' => Market::all()]);
+        return view('markets.index', ['markets' => Market::all()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class MarketController extends Controller
      */
     public function create()
     {
-        //
+        return view('markets.create');
     }
 
     /**
@@ -35,7 +35,8 @@ class MarketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $market = Market::create($request->input());
+        return view('markets.show', ['market' => $market]);
     }
 
     /**
@@ -46,7 +47,8 @@ class MarketController extends Controller
      */
     public function show($id)
     {
-        //
+        $market = Market::find($id);
+        return view('markets.show', ['market' => $market]);
     }
 
     /**
@@ -57,7 +59,8 @@ class MarketController extends Controller
      */
     public function edit($id)
     {
-        //
+        $market = Market::find($id);
+        return view('markets.edit', ['market' => $market]);
     }
 
     /**
@@ -69,7 +72,11 @@ class MarketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        error_log('zxc');
+        $market = Market::find($id);
+        $market->fill($request->input());
+        error_log(json_encode($market));
+        return view('markets.show', ['market' => $market]);
     }
 
     /**
@@ -80,6 +87,7 @@ class MarketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Market::destroy($id);
+        return view('markets.index', ['markets' => Market::all()]);
     }
 }
