@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Household expenses</title>
-</head>
 
+    <link rel="stylesheet" href="/css/app.css">
+</head>
 <body>
-@yield('content')
+<div class="container">
+    @yield('content')
+</div>
+<script src="/js/app.js"></script>
 </body>
 </html>
