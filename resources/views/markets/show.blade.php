@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{$market->name}}</h1>
+    <h1>Магазин - {{$market->name}}</h1>
     <a href="{{ route('markets.edit', ['market' => $market->id]) }}" class="btn btn-primary">Редактировать</a>
     <br>
     <br>
