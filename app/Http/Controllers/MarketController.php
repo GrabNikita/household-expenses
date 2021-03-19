@@ -72,10 +72,8 @@ class MarketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        error_log('zxc');
         $market = Market::find($id);
         $market->fill($request->input());
-        error_log(json_encode($market));
         return view('markets.show', ['market' => $market]);
     }
 
