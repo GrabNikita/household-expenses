@@ -14,7 +14,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        return view('markets.index', ['markets' => Market::all()]);
+        return view('markets.list', ['markets' => Market::all()]);
     }
 
     /**
@@ -88,6 +88,6 @@ class MarketController extends Controller
     public function destroy($id)
     {
         Market::destroy($id);
-        return view('markets.index', ['markets' => Market::all()]);
+        return redirect()->route('markets.index');
     }
 }

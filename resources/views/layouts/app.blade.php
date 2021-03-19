@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+<ul class="nav container">
+    <li class="nav-item"><a href="{{route('index')}}" class="nav-link">Главная</a></li>
+    <li class="nav-item"><a href="{{route('markets.index')}}" class="nav-link">Магазины</a></li>
+</ul>
 <div class="container">
     @yield('content')
 </div>
