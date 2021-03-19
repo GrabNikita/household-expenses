@@ -2,12 +2,11 @@
 
 @section('content')
     <h1>{{$market->name}}</h1>
-    <hr>
-    <a href="{{route('markets.index')}}">К списку</a>
-    <hr>
-    <a href="{{ route('markets.edit', ['market' => $market->id]) }}">Редактировать</a>
+    <a href="{{ route('markets.edit', ['market' => $market->id]) }}" class="btn btn-primary">Редактировать</a>
+    <br>
+    <br>
     <form action="{{ route('markets.destroy', ['market' => $market->id]) }}" method="post">
-        <button>Удалить</button>
+        <button class="btn btn-primary">Удалить</button>
         {{ method_field('delete') }}
         {{ csrf_field() }}
     </form>

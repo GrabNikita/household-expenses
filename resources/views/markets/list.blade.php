@@ -2,7 +2,9 @@
 
 @section('content')
     <h1>Магазины</h1>
-    <a href="{{ route('markets.create') }}">Создать магазин</a>
+    <a href="{{ route('markets.create') }}" class="btn btn-primary">Создать магазин</a>
+    <br>
+    <br>
     <table>
         @foreach ($markets as $market)
             <tr>
