@@ -42,24 +42,22 @@ class MarketController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param Market $market
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Market $market)
     {
-        $market = Market::find($id);
         return view('markets.show', ['market' => $market]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Market $market
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Market $market)
     {
-        $market = Market::find($id);
         return view('markets.edit', ['market' => $market]);
     }
 
@@ -67,25 +65,25 @@ class MarketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Market $market
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Market $market)
     {
-        $market = Market::find($id);
         $market->fill($request->input());
+        $market->save();
         return view('markets.show', ['market' => $market]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Market $market
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Market $market)
     {
-        Market::destroy($id);
+        Market::destroy($market->id);
         return redirect()->route('markets.index');
     }
 }
