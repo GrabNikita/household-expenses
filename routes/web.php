@@ -19,3 +19,4 @@ Route::get('/', function () {
 })->name('index');
 
 Route::resource('markets', Controllers\MarketController::class);
+Route::resource('manufacturers', Controllers\ManufacturerController::class);
