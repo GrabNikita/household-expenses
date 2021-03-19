@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Содержимое корзины - {{$basketItem->name}}</h1>
+    <h1>Редактирование содержимого корзины - {{$basketItem->name}}</h1>
     <form action="{{route('basket-items.update', ['basket_item' => $basketItem->id])}}" method="post">
         {{method_field('PUT')}}
         {{csrf_field()}}

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Создание продукта</h1>
+    <h1>Создание содержимого корзины</h1>
     <form action="{{url('basket-items')}}" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
