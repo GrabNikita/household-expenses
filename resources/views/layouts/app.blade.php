@@ -13,6 +13,8 @@
     <li class="nav-item"><a href="{{route('index')}}" class="nav-link">Главная</a></li>
     <li class="nav-item"><a href="{{route('markets.index')}}" class="nav-link">Магазины</a></li>
     <li class="nav-item"><a href="{{route('manufacturers.index')}}" class="nav-link">Производители</a></li>
+    <li class="nav-item"><a href="{{route('products.index')}}" class="nav-link">Продукты</a></li>
+    <li class="nav-item"><a href="{{route('basket-items.index')}}" class="nav-link">Содержимое корзины</a></li>
 </ul>
 <div class="container">
     @yield('content')

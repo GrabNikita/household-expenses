@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::resource('markets', Controllers\MarketController::class);
 Route::resource('manufacturers', Controllers\ManufacturerController::class);
+Route::resource('basket-items', Controllers\BasketItemController::class);
+Route::resource('products', Controllers\ProductController::class);
