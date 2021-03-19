@@ -6937,20 +6937,35 @@
 													"top": 1026,
 													"width": 185.17236328125,
 													"height": 13
+												},
+												{
+													"_type": "ERDColumnView",
+													"_id": "AAAAAAF4Sbe12X8S518=",
+													"_parent": {
+														"$ref": "AAAAAAFxNrv+hVWDyUI="
+													},
+													"model": {
+														"$ref": "AAAAAAF4Sbe1nH8PoWs="
+													},
+													"font": "Arial;13;0",
+													"left": 189,
+													"top": 1041,
+													"width": 185.17236328125,
+													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 184,
 											"top": 991,
 											"width": 195.17236328125,
-											"height": 53
+											"height": 68
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 184,
 									"top": 968,
 									"width": 195.17236328125,
-									"height": 76,
+									"height": 91,
 									"nameLabel": {
 										"$ref": "AAAAAAFxNrv+hVWCbiQ="
 									},
@@ -7617,7 +7632,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 271,
-											"top": 1062,
+											"top": 1077,
 											"height": 13,
 											"alpha": 0.5235987755982988,
 											"distance": 30,
@@ -7651,7 +7666,7 @@
 										"$ref": "AAAAAAFxNrv+hVWBLK4="
 									},
 									"lineStyle": 2,
-									"points": "256:1043;256:1112;560:1112",
+									"points": "256:1058;256:1112;560:1112",
 									"nameLabel": {
 										"$ref": "AAAAAAFxNugEB2qQ47Y="
 									},
@@ -7765,7 +7780,7 @@
 											"top": 693,
 											"width": 167.7060546875,
 											"height": 13,
-											"text": "BusketItem"
+											"text": "BasketItem"
 										},
 										{
 											"_type": "ERDColumnCompartmentView",
@@ -8730,6 +8745,17 @@
 									"type": "INTEGER",
 									"length": 0,
 									"foreignKey": true
+								},
+								{
+									"_type": "ERDColumn",
+									"_id": "AAAAAAF4Sbe1nH8PoWs=",
+									"_parent": {
+										"$ref": "AAAAAAFxNrv+hVV/W+g="
+									},
+									"name": "basket_item",
+									"type": "INTEGER",
+									"length": 0,
+									"foreignKey": true
 								}
 							]
 						},
@@ -8924,7 +8950,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxNrcL6lQjQFU="
 							},
-							"name": "BusketItem",
+							"name": "BasketItem",
 							"ownedElements": [
 								{
 									"_type": "ERDRelationship",
