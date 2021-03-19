@@ -3,7 +3,7 @@
 @section('content')
     <h1>Создание содержимого корзины</h1>
     <form action="{{url('basket-items')}}" method="post">
-        {{ csrf_field() }}
+        {{csrf_field()}}
         <div class="mb-3">
             <label for="name" class="form-label">Название</label>
             <input type="text" name="name" id="name" class="form-control">

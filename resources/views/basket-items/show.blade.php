@@ -2,13 +2,13 @@
 
 @section('content')
     <h1>Содержимое корзины - {{$basketItem->name}}</h1>
-    <a href="{{ route('basket-items.edit', ['basket_item' => $basketItem->id]) }}" class="btn btn-primary">Редактировать</a>
+    <a href="{{route('basket-items.edit', ['basket_item' => $basketItem->id])}}" class="btn btn-primary">Редактировать</a>
     <br>
     <br>
-    <form action="{{ route('basket-items.destroy', ['basket_item' => $basketItem->id]) }}" method="post">
+    <form action="{{route('basket-items.destroy', ['basket_item' => $basketItem->id])}}" method="post">
         <button class="btn btn-primary">Удалить</button>
-        {{ method_field('delete') }}
-        {{ csrf_field() }}
+        {{method_field('delete')}}
+        {{csrf_field()}}
     </form>
     <br>
     <table class="table table-striped table-hover">
