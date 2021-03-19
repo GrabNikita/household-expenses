@@ -2,13 +2,13 @@
 
 @section('content')
     <h1>Магазин - {{$market->name}}</h1>
-    <a href="{{ route('markets.edit', ['market' => $market->id]) }}" class="btn btn-primary">Редактировать</a>
+    <a href="{{route('markets.edit', ['market' => $market->id])}}" class="btn btn-primary">Редактировать</a>
     <br>
     <br>
-    <form action="{{ route('markets.destroy', ['market' => $market->id]) }}" method="post">
+    <form action="{{route('markets.destroy', ['market' => $market->id])}}" method="post">
         <button class="btn btn-primary">Удалить</button>
-        {{ method_field('delete') }}
-        {{ csrf_field() }}
+        {{method_field('delete')}}
+        {{csrf_field()}}
     </form>
     <br>
     <table class="table table-striped table-hover">
