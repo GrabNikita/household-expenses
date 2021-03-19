@@ -5,7 +5,7 @@
     <a href="{{ route('markets.create') }}" class="btn btn-primary">Создать магазин</a>
     <br>
     <br>
-    <table>
+    <table class="table table-striped table-hover">
         @foreach ($markets as $market)
             <tr>
                 <td>{{ $market->id }}</td>

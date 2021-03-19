@@ -10,8 +10,8 @@
         {{ method_field('delete') }}
         {{ csrf_field() }}
     </form>
-    <hr>
-    <table>
+    <br>
+    <table class="table table-striped table-hover">
         <thead>
         <tr>
             <th>Название</th>

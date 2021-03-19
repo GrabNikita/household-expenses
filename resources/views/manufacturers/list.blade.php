@@ -5,7 +5,7 @@
     <a href="{{route('manufacturers.create')}}" class="btn btn-primary">Создать производителя</a>
     <br>
     <br>
-    <table>
+    <table class="table table-striped table-hover">
         @foreach ($manufacturers as $manufacturer)
             <tr>
                 <td>{{$manufacturer->id}}</td>

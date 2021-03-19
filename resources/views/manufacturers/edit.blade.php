@@ -5,8 +5,10 @@
     <form action="{{route('manufacturers.update', ['manufacturer' => $manufacturer->id])}}" method="post">
         {{method_field('PUT')}}
         {{csrf_field()}}
-        <label for="name">Название</label>
-        <input type="text" name="name" id="name" value="{{ $manufacturer->name }}">
-        <button>Сохранить</button>
+        <div class="mb-3">
+            <label for="name" class="form-label">Название</label>
+            <input type="text" name="name" id="name" value="{{ $manufacturer->name }}" class="form-control">
+        </div>
+        <button class="btn btn-primary">Сохранить</button>
     </form>
 @endsection
