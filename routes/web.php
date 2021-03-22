@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::resource('markets', Controllers\MarketController::class);
-Route::resource('manufacturers', Controllers\ManufacturerController::class);
-Route::resource('basket-items', Controllers\BasketItemController::class);
-Route::resource('products', Controllers\ProductController::class);
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('markets', Controllers\MarketController::class);
+    Route::resource('manufacturers', Controllers\ManufacturerController::class);
+    Route::resource('basket-items', Controllers\BasketItemController::class);
+    Route::resource('products', Controllers\ProductController::class);
+});
