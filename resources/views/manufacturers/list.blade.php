@@ -1,8 +1,9 @@
 @extends('layouts.app')
-
+@section('pageTitle')
+    Manufacturers
+@endsection
 @section('content')
-    <h1>Производители</h1>
-    <a href="{{route('manufacturers.create')}}" class="btn btn-primary">Создать производителя</a>
+    <a href="{{route('manufacturers.create')}}" class="btn btn-primary">{{ __('manufacturers.createLinkText') }}</a>
     <br>
     <br>
     <table class="table table-striped table-hover">
