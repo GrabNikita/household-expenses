@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@if(View::hasSection('pageTitle'))
-            @yield('pageTitle', '') -
+            @yield('pageTitle') -
+        @elseif(View::hasSection('pageHeader'))
+            @yield('pageHeader') -
         @endif
         {{ config('app.name', 'Household expenses') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -60,7 +62,9 @@
 </nav>
 
 <main class="container py-3">
-    <h1>@yield('pageTitle', 'Household expenses')</h1>
+    @if(View::hasSection('pageHeader'))
+        <h1>@yield('pageHeader')</h1>
+    @endif
     @yield('content')
 </main>
 <script src="{{ asset('js/app.js') }}" defer></script>

@@ -1,18 +1,28 @@
 @extends('layouts.app')
-@section('pageTitle')
-    Manufacturers
+
+@section('pageHeader')
+    {{ __('manufacturer.listPageHeader') }}
 @endsection
+
 @section('content')
-    <a href="{{route('manufacturers.create')}}" class="btn btn-primary">{{ __('manufacturers.createLinkText') }}</a>
+    <a href="{{route('manufacturers.create')}}" class="btn btn-primary">{{ __('manufacturer.createLinkText') }}</a>
     <br>
     <br>
     <table class="table table-striped table-hover">
-        @foreach ($manufacturers as $manufacturer)
+        <thead>
             <tr>
-                <td>{{$manufacturer->id}}</td>
-                <td><a href="{{route('manufacturers.show', ['manufacturer' => $manufacturer->id])}}">
-                        {{$manufacturer->name}}</a></td>
+                <th>{{ __('manufacturer.propertyName_id') }}</th>
+                <th>{{ __('manufacturer.propertyName_name') }}</th>
             </tr>
-        @endforeach
+        </thead>
+        <tbody>
+            @foreach ($manufacturers as $manufacturer)
+                <tr>
+                    <td>{{$manufacturer->id}}</td>
+                    <td><a href="{{route('manufacturers.show', ['manufacturer' => $manufacturer->id])}}">
+                            {{$manufacturer->name}}</a></td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
 @endsection

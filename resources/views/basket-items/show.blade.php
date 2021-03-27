@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@section('pageHeader')
+    {{ __('basketItem.showPageHeader', ['name' => $basketItem->name]) }}
+@endsection
+
 @section('content')
-    <h1>Содержимое корзины - {{$basketItem->name}}</h1>
-    <a href="{{route('basket-items.edit', ['basket_item' => $basketItem->id])}}" class="btn btn-primary">Редактировать</a>
+    <a href="{{route('basket-items.edit', ['basket_item' => $basketItem->id])}}"
+       class="btn btn-primary">{{ __('common.editLinkText') }}</a>
     <br>
     <br>
     <form action="{{route('basket-items.destroy', ['basket_item' => $basketItem->id])}}" method="post">
-        <button class="btn btn-primary">Удалить</button>
+        <button class="btn btn-primary">{{ __('common.deleteLinkText') }}</button>
         {{method_field('delete')}}
         {{csrf_field()}}
     </form>
@@ -14,25 +18,25 @@
     <table class="table table-striped table-hover">
         <thead>
         <tr>
-            <th>Название</th>
-            <th>Значение</th>
+            <th>{{ __('common.entityTableHeaders_name') }}</th>
+            <th>{{ __('common.entityTableHeaders_value') }}</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>Идентификатор</td>
+            <td>{{ __('basketItem.propertyName_id') }}</td>
             <td>{{$basketItem->id}}</td>
         </tr>
         <tr>
-            <td>Название</td>
+            <td>{{ __('basketItem.propertyName_name') }}</td>
             <td>{{$basketItem->name}}</td>
         </tr>
         <tr>
-            <td>Дата создания</td>
+            <td>{{ __('basketItem.propertyName_created_at') }}</td>
             <td>{{date('H:i:s d.m.Y', strtotime($basketItem->created_at))}}</td>
         </tr>
         <tr>
-            <td>Дата изменения</td>
+            <td>{{ __('basketItem.propertyName_updated_at') }}</td>
             <td>{{date('H:i:s d.m.Y', strtotime($basketItem->updated_at))}}</td>
         </tr>
         </tbody>

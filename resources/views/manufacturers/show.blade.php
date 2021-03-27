@@ -1,7 +1,9 @@
 @extends('layouts.app')
-@section('pageTitle')
-    Manufacturer "{{ $manufacturer->name }}"
+
+@section('pageHeader')
+    {{ __('manufacturer.showPageHeader', ['name' => $manufacturer->name]) }}
 @endsection
+
 @section('content')
     <a href="{{route('manufacturers.edit', ['manufacturer' => $manufacturer->id])}}"
        class="btn btn-primary">{{ __('common.editLinkText') }}</a>
@@ -22,19 +24,19 @@
         </thead>
         <tbody>
         <tr>
-            <td>{{ __('manufacturers.propertyName_id') }}</td>
+            <td>{{ __('manufacturer.propertyName_id') }}</td>
             <td>{{$manufacturer->id}}</td>
         </tr>
         <tr>
-            <td>{{ __('manufacturers.propertyName_name') }}</td>
+            <td>{{ __('manufacturer.propertyName_name') }}</td>
             <td>{{$manufacturer->name}}</td>
         </tr>
         <tr>
-            <td>{{ __('manufacturers.propertyName_created_at') }}</td>
+            <td>{{ __('manufacturer.propertyName_created_at') }}</td>
             <td>{{date('H:i:s d.m.Y', strtotime($manufacturer->created_at))}}</td>
         </tr>
         <tr>
-            <td>{{ __('manufacturers.propertyName_updated_at') }}</td>
+            <td>{{ __('manufacturer.propertyName_updated_at') }}</td>
             <td>{{date('H:i:s d.m.Y', strtotime($manufacturer->updated_at))}}</td>
         </tr>
         </tbody>
