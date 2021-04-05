@@ -48,7 +48,7 @@
             <td>{{ date('H:i:s d.m.Y', strtotime($product->created_at)) }}</td>
         </tr>
         <tr>
-            <td>{{ __('product.propertyName_created_at') }}</td>
+            <td>{{ __('product.propertyName_updated_at') }}</td>
             <td>{{ date('H:i:s d.m.Y', strtotime($product->updated_at)) }}</td>
         </tr>
         </tbody>
