@@ -1,5 +1,7 @@
 <?php
 
+use App\Casts\Unit;
+
 return [
     'createPageHeader' => 'Creating product',
     'listPageHeader' => 'Products',
@@ -8,6 +10,12 @@ return [
     'createLinkText' => 'Create product',
     'propertyName_id' => 'Id',
     'propertyName_name' => 'Name',
+    'propertyName_amount' => 'Amount',
+    'propertyName_unit' => 'Unit',
+    'unitValue_' . Unit::UNDEFINED => 'Undefined',
+    'unitValue_' . Unit::PIECE => 'Piece',
+    'unitValue_' . Unit::KILOGRAM => 'Kilogram',
+    'unitValue_' . Unit::LITER => 'Liter',
     'propertyName_manufacturer' => 'Manufacturer',
     'propertyName_basketItem' => 'Basket item',
     'propertyName_created_at' => 'Created at',

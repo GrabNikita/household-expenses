@@ -5,20 +5,34 @@
 @endsection
 
 @section('content')
-    <form action="{{route('products.update', ['product' => $product->id])}}" method="post">
-        {{method_field('PUT')}}
-        {{csrf_field()}}
+    <form action="{{ route('products.update', ['product' => $product->id]) }}" method="post">
+        {{ method_field('PUT') }}
+        {{ csrf_field() }}
         <div class="mb-3">
             <label for="name" class="form-label">{{ __('product.propertyName_name') }}</label>
-            <input type="text" name="name" id="name" value="{{$product->name}}" class="form-control">
+            <input type="text" name="name" id="name" value="{{ $product->name }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">{{ __('product.propertyName_amount') }}</label>
+            <input type="number"  step="0.001" name="amount" id="amount" value="{{ $product->amount }}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="unit" class="form-label">{{ __('product.propertyName_unit') }}</label>
+            <select name="unit" id="unit" class="form-control form-select">
+                @foreach(\App\Casts\Unit::getExistValues() as $value)
+                    <option value="{{ $value}}"
+                            @if($product->unit === $value) selected @endif>
+                        {{ __('product.unitValue_' . $value) }}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="manufacturer" class="form-label">{{ __('product.propertyName_manufacturer') }}</label>
             <select name="manufacturer_id" id="manufacturer" class="form-control form-select">
                 @foreach($manufacturers as $manufacturer)
-                    <option value="{{$manufacturer->id}}"
+                    <option value="{{ $manufacturer->id}} "
                             @if($manufacturer->id === $product->manufacturer->id) selected @endif>
-                        {{$manufacturer->name}}</option>
+                        {{ $manufacturer->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -26,9 +40,9 @@
             <label for="basket_item" class="form-label">{{ __('product.propertyName_basketItem') }}</label>
             <select name="basket_item_id" id="basket_item" class="form-control form-select">
                 @foreach($basketItems as $basketItem)
-                    <option value="{{$basketItem->id}}"
+                    <option value="{{ $basketItem->id }}"
                             @if($basketItem->id === $product->basketItem->id) selected @endif>
-                        {{$basketItem->name}}</option>
+                        {{ $basketItem->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -36,9 +50,9 @@
             <label for="basket_item" class="form-label">{{ __('product.propertyName_markets') }}</label>
             <select name="markets[]" id="basket_item" class="form-control form-select" multiple>
                 @foreach($markets as $market)
-                    <option value="{{$market->id}}"
+                    <option value="{{ $market->id }}"
                             @if($product->markets->contains($market->id)) selected @endif>
-                        {{$market->name}}</option>
+                        {{ $market->name }}</option>
                 @endforeach
             </select>
         </div>
