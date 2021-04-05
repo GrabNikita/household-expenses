@@ -27,6 +27,14 @@
                 @endforeach
             </select>
         </div>
+        <div class="mb-3">
+            <label for="basket_item" class="form-label">{{ __('product.propertyName_markets') }}</label>
+            <select name="markets[]" id="basket_item" class="form-control form-select" multiple>
+                @foreach($markets as $market)
+                    <option value="{{$market->id}}">{{$market->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <button class="btn btn-primary">{{ __('common.submitCreateFormButtonText') }}</button>
     </form>
 @endsection

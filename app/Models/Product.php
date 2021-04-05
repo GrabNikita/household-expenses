@@ -28,4 +28,8 @@ class Product extends Model
     public function basketItem() {
         return $this->belongsTo(BasketItem::class);
     }
+
+    public function markets() {
+        return $this->belongsToMany(Market::class);
+    }
 }

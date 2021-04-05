@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BasketItem;
 use App\Models\Manufacturer;
+use App\Models\Market;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -29,6 +30,7 @@ class ProductController extends Controller
         return view('products.create', [
             'basketItems' => BasketItem::all(),
             'manufacturers' => Manufacturer::all(),
+            'markets' => Market::all(),
         ]);
     }
 
@@ -41,6 +43,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = Product::create($request->input());
+        $product->markets()->sync($request->input('markets'));
+        $product->save();
         return view('products.show', ['product' => $product]);
     }
 
@@ -67,6 +71,7 @@ class ProductController extends Controller
             'product' => $product,
             'basketItems' => BasketItem::all(),
             'manufacturers' => Manufacturer::all(),
+            'markets' => Market::all(),
         ]);
     }
 
@@ -80,6 +85,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->fill($request->input());
+        $product->markets()->sync($request->input('markets'));
         $product->save();
         return view('products.show', ['product' => $product]);
     }

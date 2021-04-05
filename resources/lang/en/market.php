@@ -10,4 +10,5 @@ return [
     'propertyName_name' => 'Name',
     'propertyName_created_at' => 'Created at',
     'propertyName_updated_at' => 'Updated at',
+    'propertyName_products' => 'Products',
 ];
