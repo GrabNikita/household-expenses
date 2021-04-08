@@ -30,6 +30,8 @@
                                         class="nav-link">{{ __('MainMenu.ProductsLabel') }}</a></li>
                 <li class="nav-item"><a href="{{route('basket-items.index')}}"
                                         class="nav-link">{{ __('MainMenu.BasketItemsLabel') }}</a></li>
+                <li class="nav-item"><a href="{{route('baskets.index')}}"
+                                        class="nav-link">{{ __('MainMenu.BasketsLabel') }}</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 @guest
