@@ -9617,8 +9617,8 @@
 									"_parent": {
 										"$ref": "AAAAAAF4pc/dmRIUmYw="
 									},
-									"name": "COUNT",
-									"type": "INTEGER",
+									"name": "amount",
+									"type": "DOUBLE",
 									"length": 0
 								}
 							]
