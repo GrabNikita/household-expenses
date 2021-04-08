@@ -6,4 +6,5 @@ return [
     'ProductsLabel' => 'Products',
     'BasketItemsLabel' => 'Basket items',
     'BasketsLabel' => 'Baskets',
+    'ReceiptsLabel' => 'Receipts',
 ];

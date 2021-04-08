@@ -22,16 +22,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('markets.index')}}"
+                <li class="nav-item"><a href="{{ route('markets.index') }}"
                                         class="nav-link">{{ __('MainMenu.MarketsLabel') }}</a></li>
-                <li class="nav-item"><a href="{{route('manufacturers.index')}}"
+                <li class="nav-item"><a href="{{ route('manufacturers.index') }}"
                                         class="nav-link">{{ __('MainMenu.ManufacturersLabel') }}</a></li>
-                <li class="nav-item"><a href="{{route('products.index')}}"
+                <li class="nav-item"><a href="{{ route('products.index') }}"
                                         class="nav-link">{{ __('MainMenu.ProductsLabel') }}</a></li>
-                <li class="nav-item"><a href="{{route('basket-items.index')}}"
+                <li class="nav-item"><a href="{{ route('basket-items.index') }}"
                                         class="nav-link">{{ __('MainMenu.BasketItemsLabel') }}</a></li>
-                <li class="nav-item"><a href="{{route('baskets.index')}}"
+                <li class="nav-item"><a href="{{ route('baskets.index') }}"
                                         class="nav-link">{{ __('MainMenu.BasketsLabel') }}</a></li>
+                <li class="nav-item"><a href="{{ route('receipts.index') }}"
+                                        class="nav-link">{{ __('MainMenu.ReceiptsLabel') }}</a></li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 @guest

@@ -27,4 +27,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('basket-items', Controllers\BasketItemController::class);
     Route::resource('products', Controllers\ProductController::class);
     Route::resource('baskets', Controllers\BasketController::class);
+    Route::resource('receipts', Controllers\ReceiptController::class);
 });
