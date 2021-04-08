@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function baskets() {
         return $this->hasMany(Basket::class, 'creator_id', 'id');
     }
+
+    public function receipts() {
+        return $this->hasMany(Receipt::class);
+    }
 }
