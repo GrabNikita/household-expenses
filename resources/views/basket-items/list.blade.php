@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <a href="{{route('basket-items.create')}}" class="btn btn-primary">{{ __('basketItem.createLinkText') }}</a>
+    <a href="{{ route('basket-items.create') }}" class="btn btn-primary">{{ __('basketItem.createLinkText') }}</a>
     <br>
     <br>
     <table class="table table-striped table-hover">
@@ -18,8 +18,11 @@
         <tbody>
             @foreach ($basketItems as $basketItem)
                 <tr>
-                    <td>{{$basketItem->id}}</td>
-                    <td><a href="{{route('basket-items.show', ['basket_item' => $basketItem->id])}}">{{$basketItem->name}}</a></td>
+                    <td>{{ $basketItem->id }}</td>
+                    <td>
+                        <a href="{{ route('basket-items.show', ['basket_item' => $basketItem->id]) }}">
+                            {{ $basketItem->name }}</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
