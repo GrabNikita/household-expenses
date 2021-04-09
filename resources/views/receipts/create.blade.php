@@ -8,7 +8,7 @@
     <form action="{{ route('receipts.store') }}" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
-            <label for="purchase_date" class="form-label">{{ __('product.propertyName_purchase_date') }}</label>
+            <label for="purchase_date" class="form-label">{{ __('receipt.propertyName_purchase_date') }}</label>
             <input type="datetime-local" name="purchase_date" id="purchase_date" class="form-control">
         </div>
         <div class="mb-3">
