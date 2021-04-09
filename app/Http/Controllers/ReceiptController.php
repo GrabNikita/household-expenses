@@ -8,7 +8,6 @@ use App\Models\Receipt;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class ReceiptController extends Controller {
 
@@ -41,7 +40,6 @@ class ReceiptController extends Controller {
      */
     public function store(Request $request) {
         $receipt = Auth::user()->receipts()->create($request->input());
-        Log::debug('request input', ['input' => $request->input()]);
         return view('receipts.show', ['receipt' => $receipt]);
     }
 
@@ -53,7 +51,10 @@ class ReceiptController extends Controller {
      */
     public function show(Receipt $receipt) {
         if ($receipt->user->id !== Auth::user()->id) abort(404);
-        return view('receipts.show', ['receipt' => $receipt]);
+        return view('receipts.show', [
+            'receipt' => $receipt,
+            'products' => $receipt->market->products,
+        ]);
     }
 
     /**

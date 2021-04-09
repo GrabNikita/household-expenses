@@ -28,4 +28,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('products', Controllers\ProductController::class);
     Route::resource('baskets', Controllers\BasketController::class);
     Route::resource('receipts', Controllers\ReceiptController::class);
+    Route::resource('receipt-items', Controllers\ReceiptItemController::class)->except([
+        'index', 'show', 'create', 'edit']);
 });

@@ -11,4 +11,5 @@ return [
     'propertyName_market' => 'Market',
     'propertyName_basket' => 'Basket',
     'propertyName_purchase_date' => 'Purchase date',
+    'propertyName_receiptItems' => 'Receipt items',
 ];

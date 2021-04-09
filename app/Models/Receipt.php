@@ -35,7 +35,7 @@ class Receipt extends Model {
         return $this->belongsTo(Market::class);
     }
 
-    public function receiptItem() {
+    public function receiptItems() {
         return $this->hasMany(ReceiptItem::class);
     }
 }
