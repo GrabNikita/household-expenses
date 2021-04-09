@@ -18,6 +18,7 @@ class CreateReceiptItemsTable extends Migration
             $table->integer('receipt_id');
             $table->integer('product_id');
             $table->double('amount');
+            $table->double('price');
         });
     }
 

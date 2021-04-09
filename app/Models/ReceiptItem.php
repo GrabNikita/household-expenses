@@ -16,6 +16,7 @@ class ReceiptItem extends Model
         'receipt_id',
         'product_id',
         'amount',
+        'price',
     ];
 
     public function receipt() {
