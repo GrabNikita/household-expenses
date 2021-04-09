@@ -32,11 +32,11 @@
             <td>{{ $product->name }}</td>
         </tr>
         <tr>
-            <td>{{ __('product.propertyName_name') }}</td>
+            <td>{{ __('product.propertyName_amount') }}</td>
             <td>{{ $product->amount }}</td>
         </tr>
         <tr>
-            <td>{{ __('product.propertyName_name') }}</td>
+            <td>{{ __('product.propertyName_unit') }}</td>
             <td>{{ __('product.unitValue_' . $product->unit) }}</td>
         </tr>
         <tr>
