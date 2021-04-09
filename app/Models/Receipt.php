@@ -14,7 +14,7 @@ class Receipt extends Model {
     public $timestamps = false;
 
     protected $fillable = [
-        'user',
+        'user_id',
         'basket_id',
         'market_id',
         'purchase_date'
