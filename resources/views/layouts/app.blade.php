@@ -14,57 +14,50 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Household expenses') }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="{{ route('markets.index') }}"
-                                            class="nav-link">{{ __('MainMenu.MarketsLabel') }}</a></li>
-                    <li class="nav-item"><a href="{{ route('manufacturers.index') }}"
-                                            class="nav-link">{{ __('MainMenu.ManufacturersLabel') }}</a></li>
-                    <li class="nav-item"><a href="{{ route('products.index') }}"
-                                            class="nav-link">{{ __('MainMenu.ProductsLabel') }}</a></li>
-                    <li class="nav-item"><a href="{{ route('basket-items.index') }}"
-                                            class="nav-link">{{ __('MainMenu.BasketItemsLabel') }}</a></li>
-                    <li class="nav-item"><a href="{{ route('baskets.index') }}"
-                                            class="nav-link">{{ __('MainMenu.BasketsLabel') }}</a></li>
-                    <li class="nav-item"><a href="{{ route('receipts.index') }}"
-                                            class="nav-link">{{ __('MainMenu.ReceiptsLabel') }}</a></li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                        @endif
+    <top-panel
+        home-url="{{ url('/') }}"
+        app-name="{{ config('app.name', 'Household expenses') }}"
+        toggle-navigation-label="{{ __('Toggle navigation') }}"
+    >
+        <top-panel-main-menu>
+            <top-panel-main-menu-item
+                url="{{ route('markets.index') }}"
+                title="{{ __('MainMenu.MarketsLabel') }}"
+            ></top-panel-main-menu-item>
+            <top-panel-main-menu-item
+                url="{{ route('manufacturers.index') }}"
+                title="{{ __('MainMenu.ManufacturersLabel') }}"
+            ></top-panel-main-menu-item>
+            <top-panel-main-menu-item
+                url="{{ route('products.index') }}"
+                title="{{ __('MainMenu.ProductsLabel') }}"
+            ></top-panel-main-menu-item>
+            <top-panel-main-menu-item
+                url="{{ route('basket-items.index') }}"
+                title="{{ __('MainMenu.BasketItemsLabel') }}"
+            ></top-panel-main-menu-item>
+            <top-panel-main-menu-item
+                url="{{ route('baskets.index') }}"
+                title="{{ __('MainMenu.BasketsLabel') }}"
+            ></top-panel-main-menu-item>
+            <top-panel-main-menu-item
+                url="{{ route('receipts.index') }}"
+                title="{{ __('MainMenu.ReceiptsLabel') }}"
+            ></top-panel-main-menu-item>
 
-                        @if (Route::has('register'))
-                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ Auth::user()->name }}
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </top-panel-main-menu>
+        <top-panel-auth-panel
+            login-url="{{ route('login') }}"
+            login-button-label="{{ __('Login') }}"
+            register-url="{{ route('register') }}"
+            register-button-label="{{ __('Register') }}"
+            logout-url="{{ route('logout') }}"
+            logout-button-label="{{ __('Logout') }}"
+            user-name="{{ (auth()->check() ? Auth::user()->name : '') }}"
+            csrf-token="{{ csrf_token() }}"
+            is-guest="{{ !auth()->check() }}"
+        ></top-panel-auth-panel>
+    </top-panel>
     <main class="container py-3">
         @if(View::hasSection('pageHeader'))
             <h1>@yield('pageHeader')</h1>
