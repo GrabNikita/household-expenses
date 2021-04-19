@@ -65,7 +65,6 @@
             </div>
         </div>
     </nav>
-    <example-component></example-component>
     <main class="container py-3">
         @if(View::hasSection('pageHeader'))
             <h1>@yield('pageHeader')</h1>
