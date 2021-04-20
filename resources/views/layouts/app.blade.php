@@ -64,7 +64,8 @@
             <h1>@yield('pageHeader')</h1>
         @endif
         @yield('content')
-    </main>
+    </the-content>
+    <the-footer></the-footer>
 </div>
 </body>
 </html>
