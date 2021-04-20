@@ -6,8 +6,7 @@
 
 <script>
 export default {
-    name: "TopPanelMainMenuItem",
+    name: "TheHeaderMainMenuItem",
     props: ['url', 'title'],
 }
 </script>
-

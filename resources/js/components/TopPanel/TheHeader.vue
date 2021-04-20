@@ -1,7 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <a class="navbar-brand" v-bind:href="homeUrl">{{ appName }}</a>
+    <header class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
+            <a class="navbar-brand" v-bind:href="homeUrl">{{ appName }}</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -17,13 +17,12 @@
                 <slot></slot>
             </div>
         </div>
-    </nav>
+    </header>
 </template>
 
 <script>
 export default {
-    name: "TopPanel",
+    name: "TheHeader",
     props: ['homeUrl', 'appName', 'toggleNavigationLabel'],
 }
 </script>
-

@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: "TopPanelAuthPanel",
+    name: "TheHeaderAuthPanel",
     props: [
         'loginUrl', 'loginButtonLabel',
         'registerUrl', 'registerButtonLabel',
@@ -31,7 +31,3 @@ export default {
     ],
 }
 </script>
-
-<style scoped>
-
-</style>

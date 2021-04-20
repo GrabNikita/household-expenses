@@ -15,39 +15,39 @@
 </head>
 <body>
 <div id="app">
-    <top-panel
+    <the-header
         home-url="{{ url('/') }}"
         app-name="{{ config('app.name', 'Household expenses') }}"
         toggle-navigation-label="{{ __('Toggle navigation') }}"
     >
-        <top-panel-main-menu>
-            <top-panel-main-menu-item
+        <the-header-main-menu>
+            <the-header-main-menu-item
                 url="{{ route('markets.index') }}"
                 title="{{ __('MainMenu.MarketsLabel') }}"
-            ></top-panel-main-menu-item>
-            <top-panel-main-menu-item
+            ></the-header-main-menu-item>
+            <the-header-main-menu-item
                 url="{{ route('manufacturers.index') }}"
                 title="{{ __('MainMenu.ManufacturersLabel') }}"
-            ></top-panel-main-menu-item>
-            <top-panel-main-menu-item
+            ></the-header-main-menu-item>
+            <the-header-main-menu-item
                 url="{{ route('products.index') }}"
                 title="{{ __('MainMenu.ProductsLabel') }}"
-            ></top-panel-main-menu-item>
-            <top-panel-main-menu-item
+            ></the-header-main-menu-item>
+            <the-header-main-menu-item
                 url="{{ route('basket-items.index') }}"
                 title="{{ __('MainMenu.BasketItemsLabel') }}"
-            ></top-panel-main-menu-item>
-            <top-panel-main-menu-item
+            ></the-header-main-menu-item>
+            <the-header-main-menu-item
                 url="{{ route('baskets.index') }}"
                 title="{{ __('MainMenu.BasketsLabel') }}"
-            ></top-panel-main-menu-item>
-            <top-panel-main-menu-item
+            ></the-header-main-menu-item>
+            <the-header-main-menu-item
                 url="{{ route('receipts.index') }}"
                 title="{{ __('MainMenu.ReceiptsLabel') }}"
-            ></top-panel-main-menu-item>
+            ></the-header-main-menu-item>
 
-        </top-panel-main-menu>
-        <top-panel-auth-panel
+        </the-header-main-menu>
+        <the-header-auth-panel
             login-url="{{ route('login') }}"
             login-button-label="{{ __('Login') }}"
             register-url="{{ route('register') }}"
@@ -57,12 +57,9 @@
             user-name="{{ (auth()->check() ? Auth::user()->name : '') }}"
             csrf-token="{{ csrf_token() }}"
             is-guest="{{ !auth()->check() }}"
-        ></top-panel-auth-panel>
-    </top-panel>
-    <main class="container py-3">
-        @if(View::hasSection('pageHeader'))
-            <h1>@yield('pageHeader')</h1>
-        @endif
+        ></the-header-auth-panel>
+    </the-header>
+    <the-content>
         @yield('content')
     </the-content>
     <the-footer></the-footer>
