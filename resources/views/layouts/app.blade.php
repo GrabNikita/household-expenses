@@ -11,6 +11,7 @@
         @endif
         {{ config('app.name', 'Household expenses') }}</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 <body>
 <div id="app">
@@ -65,6 +66,5 @@
         @yield('content')
     </main>
 </div>
-<script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>
