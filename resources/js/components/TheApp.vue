@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
     #app {
         display: grid;
-        grid-template-rows: 3rem 1fr 3rem;
+        grid-template-rows: 3rem auto 3rem;
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
