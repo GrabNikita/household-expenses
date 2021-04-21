@@ -20,6 +20,7 @@ export default {
             "content"
             "footer"
         ;
+        grid-gap: 1rem;
     }
 
     main {
