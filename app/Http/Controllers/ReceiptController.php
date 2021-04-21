@@ -17,7 +17,7 @@ class ReceiptController extends Controller {
      * @return Response
      */
     public function index() {
-        $receipts = Auth::user()->receipts()->paginate(1);
+        $receipts = Auth::user()->receipts()->paginate();
         return view('receipts.list', ['receipts' => $receipts]);
     }
 
