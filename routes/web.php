@@ -15,13 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', Controllers\IndexController::class)->name('index');
     Route::resource('markets', Controllers\MarketController::class);
     Route::resource('manufacturers', Controllers\ManufacturerController::class);
     Route::resource('basket-items', Controllers\BasketItemController::class);
