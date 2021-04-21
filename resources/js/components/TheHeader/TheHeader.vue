@@ -26,3 +26,8 @@ export default {
     props: ['homeUrl', 'appName', 'toggleNavigationLabel'],
 }
 </script>
+<style lang="scss">
+    header {
+        grid-area: header;
+    }
+</style>

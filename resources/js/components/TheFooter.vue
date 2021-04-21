@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-white shadow-sm">
-        <div class="container">
+        <div class="container text-center">
             Граб Никита
         </div>
     </footer>
@@ -14,6 +14,8 @@ export default {
 
 <style lang="scss">
 footer {
-    padding: 0.5rem 1rem;
+    grid-area: footer;
+    padding: 1rem 0;
+    line-height: 1rem;
 }
 </style>

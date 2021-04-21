@@ -1,0 +1,28 @@
+<template>
+    <div id="app">
+        <slot></slot>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "TheApp"
+}
+</script>
+
+<style lang="scss">
+    #app {
+        display: grid;
+        grid-template-rows: 3rem 1fr 3rem;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content"
+            "footer"
+        ;
+    }
+
+    main {
+        grid-area: content;
+    }
+</style>
