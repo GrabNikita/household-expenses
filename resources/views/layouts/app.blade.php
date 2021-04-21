@@ -61,6 +61,7 @@
         </the-header>
         <the-content>
             @yield('content')
+            <router-view></router-view>
         </the-content>
         <the-footer></the-footer>
     </the-app>

@@ -8,6 +8,33 @@ require('./bootstrap');
 
 window.Vue = require('vue').default;
 
+//support vuex
+import Vuex from 'vuex';
+Vue.use(Vuex);
+import storeData from "./store/index";
+
+const store = new Vuex.Store(
+    storeData
+);
+
+//Import View Router
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+//Routes
+import { routes } from './routes';
+//Register Routes
+const router = new VueRouter({
+    mode: 'history',
+    routes,
+
+});
+router.beforeEach((to, from, next) => {
+    console.log(to, from, next);
+});
+
+//Pagination laravel-vue-pagination
+Vue.component('pagination', require('laravel-vue-pagination'));
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -16,8 +43,8 @@ window.Vue = require('vue').default;
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./components', true, /\.vue$/i)
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+/*const files = require.context('./components', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))*/
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
@@ -27,6 +54,25 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import TheApp from './components/TheApp';
+import TheHeader from './components/TheHeader/TheHeader';
+import TheHeaderMainMenu from './components/TheHeader/TheHeaderMainMenu';
+import TheHeaderMainMenuItem from './components/TheHeader/TheHeaderMainMenuItem';
+import TheHeaderAuthPanel from './components/TheHeader/TheHeaderAuthPanel';
+import TheContent from './components/TheContent';
+import TheFooter from './components/TheFooter';
+
 const app = new Vue({
     el: '#app-wrapper',
+    router,
+    store,
+    components: {
+        TheFooter,
+        TheContent,
+        TheHeaderAuthPanel,
+        TheHeaderMainMenuItem,
+        TheHeaderMainMenu,
+        TheHeader,
+        TheApp,
+    }
 });
