@@ -1,5 +1,5 @@
 <template>
-    <main class="container py-3">
+    <main class="container">
         <h1 v-if="pageHeader">{{ pageHeader }}</h1>
         <slot></slot>
     </main>
