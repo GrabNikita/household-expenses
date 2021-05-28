@@ -9,7 +9,7 @@ use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use ReflectionClass;
 use ReflectionException;
 
-class Unit implements Castable {
+class ProductUnit implements Castable {
 
     const UNDEFINED = 0;
     const PIECE = 1;
@@ -30,12 +30,12 @@ class Unit implements Castable {
     public static function castUsing(array $arguments) {
         return new class implements CastsAttributes {
             public function get($model, $key, $value, $attributes) {
-                if (!in_array($value, Unit::getExistValues())) $value = Unit::UNDEFINED;
+                if (!in_array($value, ProductUnit::getExistValues())) $value = ProductUnit::UNDEFINED;
                 return $value;
             }
 
             public function set($model, $key, $value, $attributes) {
-                if (!in_array($value, Unit::getExistValues())) $value = Unit::UNDEFINED;
+                if (!in_array($value, ProductUnit::getExistValues())) $value = ProductUnit::UNDEFINED;
                 return $value;
             }
         };

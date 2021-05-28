@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Casts\Unit;
+use App\Casts\ProductUnit;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -20,7 +20,7 @@ class Product extends Model {
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
-        'unit' => Unit::class,
+        'unit' => ProductUnit::class,
     ];
 
     public function manufacturer() {

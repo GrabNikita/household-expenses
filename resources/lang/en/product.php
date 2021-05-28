@@ -1,6 +1,6 @@
 <?php
 
-use App\Casts\Unit;
+use App\Casts\ProductUnit;
 
 return [
     'createPageHeader' => 'Creating product',
@@ -12,10 +12,10 @@ return [
     'propertyName_name' => 'Name',
     'propertyName_amount' => 'Amount',
     'propertyName_unit' => 'Unit',
-    'unitValue_' . Unit::UNDEFINED => 'Undefined',
-    'unitValue_' . Unit::PIECE => 'Piece',
-    'unitValue_' . Unit::KILOGRAM => 'Kilogram',
-    'unitValue_' . Unit::LITER => 'Liter',
+    'unitValue_' . ProductUnit::UNDEFINED => 'Undefined',
+    'unitValue_' . ProductUnit::PIECE => 'Piece',
+    'unitValue_' . ProductUnit::KILOGRAM => 'Kilogram',
+    'unitValue_' . ProductUnit::LITER => 'Liter',
     'propertyName_manufacturer' => 'Manufacturer',
     'propertyName_created_at' => 'Created at',
     'propertyName_updated_at' => 'Updated at',

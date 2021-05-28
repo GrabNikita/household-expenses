@@ -19,7 +19,7 @@
         <div class="mb-3">
             <label for="unit" class="form-label">{{ __('product.propertyName_unit') }}</label>
             <select name="unit" id="unit" class="form-control form-select">
-                @foreach(\App\Casts\Unit::getExistValues() as $value)
+                @foreach(\App\Casts\ProductUnit::getExistValues() as $value)
                     <option value="{{ $value}}"
                             @if($product->unit === $value) selected @endif>
                         {{ __('product.unitValue_' . $value) }}</option>
