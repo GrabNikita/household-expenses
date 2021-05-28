@@ -70,6 +70,7 @@
         <div class="mb-3">
             <label for="product_id" class="form-label">{{ __('receiptItem.propertyName_product') }}</label>
             <select name="product_id" id="product_id" class="form-control form-select">
+                <option value="" selected>{{ __('product.notSelectOptionLabel') }}</option>
                 @foreach($products as $product)
                     <option value="{{ $product->id }}">
                         {{ $product->name }} {{ $product->amount }}
