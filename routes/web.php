@@ -21,9 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', Controllers\IndexController::class)->name('index');
     Route::resource('markets', Controllers\MarketController::class);
     Route::resource('manufacturers', Controllers\ManufacturerController::class);
-    Route::resource('basket-items', Controllers\BasketItemController::class);
     Route::resource('products', Controllers\ProductController::class);
-    Route::resource('baskets', Controllers\BasketController::class);
     Route::resource('receipts', Controllers\ReceiptController::class);
     Route::resource('receipt-items', Controllers\ReceiptItemController::class)->except([
         'index', 'show', 'create', 'edit']);
