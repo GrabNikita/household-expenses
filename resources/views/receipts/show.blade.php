@@ -81,7 +81,8 @@
         </div>
         <div class="mb-3">
             <label for="amount" class="form-label">{{ __('receiptItem.propertyName_amount') }}</label>
-            <input type="number"  step="0.001" name="amount" id="amount" class="form-control">
+            <input type="number" name="amount" id="amount" class="form-control">
+            <div id="amountHelp" class="form-text"></div>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">{{ __('receiptItem.propertyName_price') }}</label>
