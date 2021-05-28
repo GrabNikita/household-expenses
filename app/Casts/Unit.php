@@ -7,6 +7,7 @@ namespace App\Casts;
 use Illuminate\Contracts\Database\Eloquent\Castable;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use ReflectionClass;
+use ReflectionException;
 
 class Unit implements Castable {
 
@@ -15,6 +16,9 @@ class Unit implements Castable {
     const KILOGRAM = 2;
     const LITER = 3;
 
+    /**
+     * @throws ReflectionException
+     */
     static public function getExistValues(): array {
         $class = new ReflectionClass(get_called_class());
         return $class->getConstants();
