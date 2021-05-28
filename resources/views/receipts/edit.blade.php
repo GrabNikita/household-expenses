@@ -14,6 +14,11 @@
                    value="{{ $receipt->purchase_date->toDateTimeLocalString() }}">
         </div>
         <div class="mb-3">
+            <label for="price" class="form-label">{{ __('receipt.propertyName_price') }}</label>
+            <input type="number"  step="0.01" name="price" id="price" class="form-control"
+                   value="{{ $receipt->price }}">
+        </div>
+        <div class="mb-3">
             <label for="market_id" class="form-label">{{ __('receipt.propertyName_market') }}</label>
             <select name="market_id" id="market_id" class="form-control form-select">
                 @foreach($markets as $market)

@@ -10,5 +10,6 @@ return [
     'propertyName_user' => 'User',
     'propertyName_market' => 'Market',
     'propertyName_purchase_date' => 'Purchase date',
+    'propertyName_price' => 'Price',
     'propertyName_receiptItems' => 'Receipt items',
 ];

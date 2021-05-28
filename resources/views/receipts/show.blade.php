@@ -28,12 +28,16 @@
             <td>{{ $receipt->id }}</td>
         </tr>
         <tr>
-            <td>{{ __('receipt.propertyName_market') }}</td>
-            <td>{{ $receipt->market->name }}</td>
-        </tr>
-        <tr>
             <td>{{ __('receipt.propertyName_purchase_date') }}</td>
             <td>{{ date('H:i:s d.m.Y', strtotime($receipt->purchase_date)) }}</td>
+        </tr>
+        <tr>
+            <td>{{ __('receipt.propertyName_price') }}</td>
+            <td>{{ $receipt->price }}</td>
+        </tr>
+        <tr>
+            <td>{{ __('receipt.propertyName_market') }}</td>
+            <td>{{ $receipt->market->name }}</td>
         </tr>
         </tbody>
     </table>

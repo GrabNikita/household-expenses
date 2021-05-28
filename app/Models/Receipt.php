@@ -15,7 +15,8 @@ class Receipt extends Model {
     protected $fillable = [
         'user_id',
         'market_id',
-        'purchase_date'
+        'purchase_date',
+        'price',
     ];
 
     protected $casts = [
