@@ -1,5 +1,6 @@
 <?php
 
+use App\Casts\ProductAmountType;
 use App\Casts\ProductUnit;
 
 return [
@@ -16,6 +17,10 @@ return [
     'unitValue_' . ProductUnit::PIECE => 'Piece',
     'unitValue_' . ProductUnit::KILOGRAM => 'Kilogram',
     'unitValue_' . ProductUnit::LITER => 'Liter',
+    'propertyName_amount_type' => 'Amount type',
+    'amountTypeValue_' . ProductAmountType::UNDEFINED => 'Undefined',
+    'amountTypeValue_' . ProductAmountType::BY_PIECE => 'By piece',
+    'amountTypeValue_' . ProductAmountType::BY_WEIGHT => 'By weight',
     'propertyName_manufacturer' => 'Manufacturer',
     'propertyName_created_at' => 'Created at',
     'propertyName_updated_at' => 'Updated at',

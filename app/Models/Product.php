@@ -15,6 +15,7 @@ class Product extends Model {
         'manufacturer_id',
         'unit',
         'amount',
+        'amount_type',
     ];
 
     protected $casts = [

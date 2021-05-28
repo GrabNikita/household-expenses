@@ -13,6 +13,19 @@
             <input type="text" name="name" id="name" value="{{ $product->name }}" class="form-control">
         </div>
         <div class="mb-3">
+            <label for="amount_type" class="form-label">{{ __('product.propertyName_amount_type') }}</label>
+            <select name="amount_type" id="amount_type" class="form-control form-select">
+                @foreach(\App\Casts\ProductAmountType::getExistValues() as $value)
+                    @if($value === \App\Casts\ProductAmountType::UNDEFINED)
+                        @continue
+                    @endif
+                    <option value="{{ $value}}" @if($product->amount_type === $value) selected @endif>
+                        {{ __('product.amountTypeValue_' . $value) }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+        <div class="mb-3">
             <label for="amount" class="form-label">{{ __('product.propertyName_amount') }}</label>
             <input type="number"  step="0.001" name="amount" id="amount" value="{{ $product->amount }}" class="form-control">
         </div>
@@ -20,9 +33,12 @@
             <label for="unit" class="form-label">{{ __('product.propertyName_unit') }}</label>
             <select name="unit" id="unit" class="form-control form-select">
                 @foreach(\App\Casts\ProductUnit::getExistValues() as $value)
-                    <option value="{{ $value}}"
-                            @if($product->unit === $value) selected @endif>
-                        {{ __('product.unitValue_' . $value) }}</option>
+                    @if($value === \App\Casts\ProductUnit::UNDEFINED)
+                        @continue
+                    @endif
+                    <option value="{{ $value}}" @if($product->unit === $value) selected @endif>
+                        {{ __('product.unitValue_' . $value) }}
+                    </option>
                 @endforeach
             </select>
         </div>

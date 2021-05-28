@@ -32,6 +32,10 @@
             <td>{{ $product->name }}</td>
         </tr>
         <tr>
+            <td>{{ __('product.propertyName_amount_type') }}</td>
+            <td>{{ __('product.amountTypeValue_' . $product->amount_type) }}</td>
+        </tr>
+        <tr>
             <td>{{ __('product.propertyName_amount') }}</td>
             <td>{{ $product->amount }}</td>
         </tr>
