@@ -68,15 +68,6 @@
         {{ csrf_field() }}
         <input type="hidden" name="receipt" value="{{ $receipt->id }}">
         <div class="mb-3">
-            <label for="amount" class="form-label">{{ __('receiptItem.propertyName_amount') }}</label>
-            <input type="number"  step="0.001" name="amount" id="amount" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="price" class="form-label">{{ __('receiptItem.propertyName_price') }}</label>
-            <input type="number"  step="0.01" name="price" id="price" class="form-control">
-            <div id="priceHelp" class="form-text">{{ __('receiptItem.price_help') }}</div>
-        </div>
-        <div class="mb-3">
             <label for="product_id" class="form-label">{{ __('receiptItem.propertyName_product') }}</label>
             <select name="product_id" id="product_id" class="form-control form-select">
                 @foreach($products as $product)
@@ -87,7 +78,15 @@
                 @endforeach
             </select>
         </div>
-
+        <div class="mb-3">
+            <label for="amount" class="form-label">{{ __('receiptItem.propertyName_amount') }}</label>
+            <input type="number"  step="0.001" name="amount" id="amount" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">{{ __('receiptItem.propertyName_price') }}</label>
+            <input type="number"  step="0.01" name="price" id="price" class="form-control">
+            <div id="priceHelp" class="form-text">{{ __('receiptItem.price_help') }}</div>
+        </div>
         <button class="btn btn-primary">{{ __('common.submitCreateFormButtonText') }}</button>
     </form>
 @endsection
