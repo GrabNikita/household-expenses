@@ -84,7 +84,10 @@ class ReceiptController extends Controller {
         if ($receipt->user->id !== Auth::user()->id) abort(404);
         $receipt->fill($request->input());
         $receipt->save();
-        return view('receipts.show', ['receipt' => $receipt]);
+        return view('receipts.show', [
+            'receipt' => $receipt,
+            'products' => $receipt->market->products,
+        ]);
     }
 
     /**
