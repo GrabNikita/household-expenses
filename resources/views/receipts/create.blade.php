@@ -22,6 +22,7 @@
         <div class="mb-3">
             <label for="basket_id" class="form-label">{{ __('receipt.propertyName_basket') }}</label>
             <select name="basket_id" id="basket_id" class="form-control form-select">
+                <option value="" selected>Нет</option>
                 @foreach($baskets as $basket)
                     <option value="{{ $basket->id }}">{{ $basket->name }}</option>
                 @endforeach

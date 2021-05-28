@@ -33,7 +33,11 @@
         </tr>
         <tr>
             <td>{{ __('receipt.propertyName_basket') }}</td>
-            <td>{{ $receipt->basket->name }}</td>
+            <td>
+                @if (!empty($receipt->basket))
+                    {{ $receipt->basket->name }}
+                @endif
+            </td>
         </tr>
         <tr>
             <td>{{ __('receipt.propertyName_purchase_date') }}</td>
@@ -51,7 +55,6 @@
             <th>{{ __('product.propertyName_amount') }}</th>
             <th>{{ __('product.propertyName_unit') }}</th>
             <th>{{ __('receiptItem.propertyName_amount') }}</th>
-            <th>{{ __('common.propertyName_amount') }}</th>
         </tr>
         </thead>
         <tbody>

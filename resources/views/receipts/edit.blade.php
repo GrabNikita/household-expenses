@@ -9,7 +9,7 @@
         {{ method_field('PUT') }}
         {{ csrf_field() }}
         <div class="mb-3">
-            <label for="purchase_date" class="form-label">{{ __('product.propertyName_purchase_date') }}</label>
+            <label for="purchase_date" class="form-label">{{ __('receipt.propertyName_purchase_date') }}</label>
             <input type="datetime-local" name="purchase_date" id="purchase_date" class="form-control"
                    value="{{ $receipt->purchase_date->toDateTimeLocalString() }}">
         </div>
@@ -26,9 +26,10 @@
         <div class="mb-3">
             <label for="basket_id" class="form-label">{{ __('receipt.propertyName_basket') }}</label>
             <select name="basket_id" id="basket_id" class="form-control form-select">
+                <option value="" @if(empty($receipt->basket) ) selected @endif>Нет</option>
                 @foreach($baskets as $basket)
                     <option value="{{ $basket->id }}"
-                            @if($receipt->basket->id === $basket->id) selected @endif>
+                            @if(!empty($receipt->basket) && $receipt->basket->id === $basket->id) selected @endif>
                         {{ $basket->name }}</option>
                 @endforeach
             </select>

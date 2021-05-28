@@ -26,7 +26,11 @@
                             {{ $receipt->purchase_date }}</a>
                     </td>
                     <td>{{ $receipt->market->name }}</td>
-                    <td>{{ $receipt->basket->name }}</td>
+                    <td>
+                        @if (!empty($receipt->basket))
+                            {{ $receipt->basket->name }}
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>
