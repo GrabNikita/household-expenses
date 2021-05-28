@@ -44,10 +44,6 @@
             <td>{{ $product->manufacturer->name }}</td>
         </tr>
         <tr>
-            <td>{{ __('product.propertyName_basketItem') }}</td>
-            <td>{{ $product->basketItem->name }}</td>
-        </tr>
-        <tr>
             <td>{{ __('product.propertyName_markets') }}</td>
             <td>{{ $product->markets->map(function ($market) {return $market->name;})->implode(', ') }}</td>
         </tr>

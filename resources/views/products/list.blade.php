@@ -14,7 +14,6 @@
             <th>{{ __('product.propertyName_id') }}</th>
             <th>{{ __('product.propertyName_name') }}</th>
             <th>{{ __('product.propertyName_manufacturer') }}</th>
-            <th>{{ __('product.propertyName_basketItem') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -23,7 +22,6 @@
                     <td>{{$product->id}}</td>
                     <td><a href="{{route('products.show', ['product' => $product->id])}}">{{$product->name}}</a></td>
                     <td>{{$product->manufacturer->name}}</td>
-                    <td>{{$product->basketItem->name}}</td>
                 </tr>
             @endforeach
         </tbody>

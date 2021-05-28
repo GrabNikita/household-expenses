@@ -23,17 +23,6 @@
                 @endforeach
             </select>
         </div>
-        <div class="mb-3">
-            <label for="basket_id" class="form-label">{{ __('receipt.propertyName_basket') }}</label>
-            <select name="basket_id" id="basket_id" class="form-control form-select">
-                <option value="" @if(empty($receipt->basket) ) selected @endif>Нет</option>
-                @foreach($baskets as $basket)
-                    <option value="{{ $basket->id }}"
-                            @if(!empty($receipt->basket) && $receipt->basket->id === $basket->id) selected @endif>
-                        {{ $basket->name }}</option>
-                @endforeach
-            </select>
-        </div>
         <button class="btn btn-primary">{{ __('common.submitEditFormButtonText') }}</button>
     </form>
 @endsection

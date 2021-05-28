@@ -14,7 +14,6 @@ class Receipt extends Model {
 
     protected $fillable = [
         'user_id',
-        'basket_id',
         'market_id',
         'purchase_date'
     ];
@@ -25,10 +24,6 @@ class Receipt extends Model {
 
     public function user() {
         return $this->belongsTo(User::class);
-    }
-
-    public function basket() {
-        return $this->belongsTo(Basket::class);
     }
 
     public function market() {

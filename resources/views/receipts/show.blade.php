@@ -32,14 +32,6 @@
             <td>{{ $receipt->market->name }}</td>
         </tr>
         <tr>
-            <td>{{ __('receipt.propertyName_basket') }}</td>
-            <td>
-                @if (!empty($receipt->basket))
-                    {{ $receipt->basket->name }}
-                @endif
-            </td>
-        </tr>
-        <tr>
             <td>{{ __('receipt.propertyName_purchase_date') }}</td>
             <td>{{ date('H:i:s d.m.Y', strtotime($receipt->purchase_date)) }}</td>
         </tr>
@@ -50,7 +42,6 @@
         <thead>
         <tr>
             <th>{{ __('receiptItem.propertyName_id') }}</th>
-            <th>{{ __('product.propertyName_basketItem') }}</th>
             <th>{{ __('receiptItem.propertyName_product') }}</th>
             <th>{{ __('product.propertyName_amount') }}</th>
             <th>{{ __('product.propertyName_unit') }}</th>
@@ -61,7 +52,6 @@
         @foreach($receipt->receiptItems as $receiptItem)
             <tr>
                 <td>{{ $receiptItem->id }}</td>
-                <td>{{ $receiptItem->product->basketItem->name }}</td>
                 <td>{{ $receiptItem->product->name }}</td>
                 <td>{{ $receiptItem->product->amount }}</td>
                 <td>{{ __('product.unitValue_' . $receiptItem->product->unit) }}</td>

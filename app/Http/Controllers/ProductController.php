@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BasketItem;
 use App\Models\Manufacturer;
 use App\Models\Market;
 use App\Models\Product;
@@ -29,7 +28,6 @@ class ProductController extends Controller
     public function create()
     {
         return view('products.create', [
-            'basketItems' => BasketItem::all(),
             'manufacturers' => Manufacturer::all(),
             'markets' => Market::all(),
         ]);
@@ -70,7 +68,6 @@ class ProductController extends Controller
     {
         return view('products.edit', [
             'product' => $product,
-            'basketItems' => BasketItem::all(),
             'manufacturers' => Manufacturer::all(),
             'markets' => Market::all(),
         ]);

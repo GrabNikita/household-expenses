@@ -8,7 +8,7 @@
     <form action="{{url('markets')}}" method="post">
         {{csrf_field()}}
         <div class="mb-3">
-            <label for="name" class="form-label">{{ __('basketItem.propertyName_name') }}</label>
+            <label for="name" class="form-label">{{ __('market.propertyName_name') }}</label>
             <input type="text" name="name" id="name" class="form-control">
         </div>
         <button class="btn btn-primary">{{ __('common.submitCreateFormButtonText') }}</button>

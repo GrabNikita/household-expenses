@@ -37,18 +37,8 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="basket_item" class="form-label">{{ __('product.propertyName_basketItem') }}</label>
-            <select name="basket_item_id" id="basket_item" class="form-control form-select">
-                @foreach($basketItems as $basketItem)
-                    <option value="{{ $basketItem->id }}"
-                            @if($basketItem->id === $product->basketItem->id) selected @endif>
-                        {{ $basketItem->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="basket_item" class="form-label">{{ __('product.propertyName_markets') }}</label>
-            <select name="markets[]" id="basket_item" class="form-control form-select" multiple>
+            <label for="markets" class="form-label">{{ __('product.propertyName_markets') }}</label>
+            <select name="markets[]" id="markets" class="form-control form-select" multiple>
                 @foreach($markets as $market)
                     <option value="{{ $market->id }}"
                             @if($product->markets->contains($market->id)) selected @endif>

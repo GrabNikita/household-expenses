@@ -13,7 +13,6 @@ class Product extends Model {
     protected $fillable = [
         'name',
         'manufacturer_id',
-        'basket_item_id',
         'unit',
         'amount',
     ];
@@ -26,10 +25,6 @@ class Product extends Model {
 
     public function manufacturer() {
         return $this->belongsTo(Manufacturer::class);
-    }
-
-    public function basketItem() {
-        return $this->belongsTo(BasketItem::class);
     }
 
     public function markets() {

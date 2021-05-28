@@ -35,14 +35,6 @@
                     title="{{ __('MainMenu.ProductsLabel') }}"
                 ></the-header-main-menu-item>
                 <the-header-main-menu-item
-                    url="{{ route('basket-items.index') }}"
-                    title="{{ __('MainMenu.BasketItemsLabel') }}"
-                ></the-header-main-menu-item>
-                <the-header-main-menu-item
-                    url="{{ route('baskets.index') }}"
-                    title="{{ __('MainMenu.BasketsLabel') }}"
-                ></the-header-main-menu-item>
-                <the-header-main-menu-item
                     url="{{ route('receipts.index') }}"
                     title="{{ __('MainMenu.ReceiptsLabel') }}"
                 ></the-header-main-menu-item>

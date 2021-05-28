@@ -14,7 +14,6 @@
             <th>{{ __('receipt.propertyName_id') }}</th>
             <th>{{ __('receipt.propertyName_purchase_date') }}</th>
             <th>{{ __('receipt.propertyName_market') }}</th>
-            <th>{{ __('receipt.propertyName_basket') }}</th>
         </tr>
         </thead>
         <tbody>
@@ -26,11 +25,6 @@
                             {{ $receipt->purchase_date }}</a>
                     </td>
                     <td>{{ $receipt->market->name }}</td>
-                    <td>
-                        @if (!empty($receipt->basket))
-                            {{ $receipt->basket->name }}
-                        @endif
-                    </td>
                 </tr>
             @endforeach
         </tbody>

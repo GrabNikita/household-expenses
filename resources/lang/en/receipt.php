@@ -9,7 +9,6 @@ return [
     'propertyName_id' => 'Id',
     'propertyName_user' => 'User',
     'propertyName_market' => 'Market',
-    'propertyName_basket' => 'Basket',
     'propertyName_purchase_date' => 'Purchase date',
     'propertyName_receiptItems' => 'Receipt items',
 ];

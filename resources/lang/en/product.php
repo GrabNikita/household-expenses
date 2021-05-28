@@ -17,7 +17,6 @@ return [
     'unitValue_' . Unit::KILOGRAM => 'Kilogram',
     'unitValue_' . Unit::LITER => 'Liter',
     'propertyName_manufacturer' => 'Manufacturer',
-    'propertyName_basketItem' => 'Basket item',
     'propertyName_created_at' => 'Created at',
     'propertyName_updated_at' => 'Updated at',
     'propertyName_markets' => 'Markets',

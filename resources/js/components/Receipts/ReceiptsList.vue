@@ -5,7 +5,6 @@
             <th>id</th>
             <th>Purchase date</th>
             <th>market</th>
-            <th>basket</th>
         </tr>
         </thead>
         <tbody>

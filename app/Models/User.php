@@ -41,10 +41,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function baskets() {
-        return $this->hasMany(Basket::class, 'creator_id', 'id');
-    }
-
     public function receipts() {
         return $this->hasMany(Receipt::class);
     }

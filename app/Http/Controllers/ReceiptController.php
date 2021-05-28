@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Basket;
 use App\Models\Market;
 use App\Models\Receipt;
 use Illuminate\Http\Request;
@@ -28,7 +27,6 @@ class ReceiptController extends Controller {
      */
     public function create() {
         return view('receipts.create', [
-            'baskets' => Basket::all(),
             'markets' => Market::all(),
         ]);
     }
@@ -41,7 +39,10 @@ class ReceiptController extends Controller {
      */
     public function store(Request $request) {
         $receipt = Auth::user()->receipts()->create($request->input());
-        return view('receipts.show', ['receipt' => $receipt]);
+        return view('receipts.show', [
+            'receipt' => $receipt,
+            'products' => $receipt->market->products,
+        ]);
     }
 
     /**
@@ -68,7 +69,6 @@ class ReceiptController extends Controller {
         if ($receipt->user->id !== Auth::user()->id) abort(404);
         return view('receipts.edit', [
             'receipt' => $receipt,
-            'baskets' => Basket::all(),
             'markets' => Market::all(),
         ]);
     }
