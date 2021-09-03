@@ -5,6 +5,13 @@
 @endsection
 
 @section('content')
+    <script>
+        window.serverSideData = Object.assign(window.serverSideData, @json([
+            'receipts' => $receipts,
+        ]));
+    </script>
+@endsection
+@section('content2')
     <a href="{{ route('receipts.create') }}" class="btn btn-primary">{{ __('receipt.createLinkText') }}</a>
     <br>
     <br>

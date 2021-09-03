@@ -1,7 +1,7 @@
 <template>
     <header class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <router-link class="navbar-brand" v-bind:to="{name: 'home'}">{{ appName }}</router-link>
+            <router-link class="navbar-brand" v-bind:to="'/'">{{ appName }}</router-link>
             <button
                 class="navbar-toggler"
                 type="button"

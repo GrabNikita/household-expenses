@@ -6,25 +6,21 @@ let mockReceipt = {
 };
 
 export default  {
-    state: {
-        receipts: [],
-    },
+    state: (window.serverSideData ? window.serverSideData : {}),
     getters: {
         getReceipts(state) {
-            console.log('store getReceipts getter call', state);
+            console.log('state', state);
             return state.receipts;
         }
     },
     actions: {
         loadReceipts(context) {
-            console.log();
-            let receipt = {...mockReceipt};
-            context.commit('receipts', [receipt]);
-        }
+            let receipts = [mockReceipt];
+            context.commit('receipts', {data: receipts});
+        },
     },
     mutations: {
         receipts(state, receipts) {
-            console.log('store receipts motution call', state, receipts);
             return state.receipts = receipts;
         }
     },

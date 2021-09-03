@@ -1,7 +1,7 @@
 <template>
     <main class="container">
         <h1 v-if="pageHeader">{{ pageHeader }}</h1>
-        <slot></slot>
+        <router-view></router-view>
     </main>
 </template>
 
@@ -11,3 +11,10 @@ export default {
     props: ['pageHeader'],
 }
 </script>
+
+<style scoped>
+main {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+</style>

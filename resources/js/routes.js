@@ -1,5 +1,6 @@
 import TheHomePage from './components/TheHomePage';
 import The404Page from './components/The404Page';
+import ReceiptsList from './components/Receipts/ReceiptsList';
 
 export const routes = [
     {
@@ -8,8 +9,33 @@ export const routes = [
         component: TheHomePage,
     },
     {
+        path: '/markets',
+        name: 'markets',
+        component: The404Page,
+    },
+    {
+        path: '/manufacturers',
+        name: 'manufacturers',
+        component: The404Page,
+    },
+    {
+        path: '/products',
+        name: 'products',
+        component: The404Page,
+    },
+    {
+        path: '/receipts',
+        name: 'receipts',
+        component: ReceiptsList,
+    },
+    {
+        path: '/markets',
+        name: 'markets',
+        component: The404Page,
+    },
+    {
         path: '*',
         name: '404',
         component: The404Page,
-    }
+    },
 ];
