@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ReceiptsList from './ReceiptsList';
+import ReceiptsList from '../components/Receipts/ReceiptsList';
 
 export default {
     name: "ReceiptsPage",

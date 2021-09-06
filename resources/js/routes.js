@@ -1,6 +1,6 @@
-import TheHomePage from './components/TheHomePage';
-import The404Page from './components/The404Page';
-import ReceiptsList from './components/Receipts/ReceiptsList';
+import TheHomePage from './pages/TheHomePage';
+import The404Page from './pages/The404Page';
+import ReceiptsPage from './pages/ReceiptsPage';
 
 export const routes = [
     {
@@ -26,7 +26,7 @@ export const routes = [
     {
         path: '/receipts',
         name: 'receipts',
-        component: ReceiptsList,
+        component: ReceiptsPage,
     },
     {
         path: '/markets',
