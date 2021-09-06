@@ -10,7 +10,7 @@
         <tbody>
             <tr
                 is="receipt-list-item"
-                v-for="receipt in getReceipts.data"
+                v-for="receipt in receipts.data"
                 v-bind:key="receipt.id"
                 v-bind:receipt="receipt"
             ></tr>
@@ -20,13 +20,14 @@
 
 <script>
 import ReceiptListItem from './ReceiptListItem';
+
 export default {
     name: "ReceiptsList",
     components: {ReceiptListItem},
     computed: {
-        getReceipts() {
+        receipts() {
             return this.$store.getters.getReceipts;
-        }
+        },
     },
 }
 </script>
