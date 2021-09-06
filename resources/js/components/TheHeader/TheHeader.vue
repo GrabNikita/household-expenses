@@ -1,7 +1,7 @@
 <template>
     <header class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <router-link class="navbar-brand" v-bind:to="'/'">{{ appName }}</router-link>
+            <router-link class="navbar-brand" to="/">Household expenses</router-link>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -9,21 +9,28 @@
                 data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
-                v-bind:aria-label="toggleNavigationLabel"
+                aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <slot></slot>
+                <the-header-main-menu></the-header-main-menu>
+                <the-header-auth-panel></the-header-auth-panel>
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import TheHeaderMainMenu from './TheHeaderMainMenu';
+import TheHeaderAuthPanel from './TheHeaderAuthPanel';
+
 export default {
     name: "TheHeader",
-    props: ['homeUrl', 'appName', 'toggleNavigationLabel'],
+    components: {
+        TheHeaderMainMenu,
+        TheHeaderAuthPanel,
+    }
 }
 </script>
 <style lang="scss">

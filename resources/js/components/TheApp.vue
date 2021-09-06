@@ -1,38 +1,6 @@
 <template>
     <div id="the-app">
-        <the-header
-            home-url="/"
-            app-name="Household expenses"
-            toggle-navigation-label="Toggle navigation"
-        >
-            <the-header-main-menu>
-                <the-header-main-menu-item
-                    url="markets"
-                    title="Markets"
-                ></the-header-main-menu-item>
-                <the-header-main-menu-item
-                    url="manufacturers"
-                    title="Manufacturers"
-                ></the-header-main-menu-item>
-                <the-header-main-menu-item
-                    url="products"
-                    title="Products"
-                ></the-header-main-menu-item>
-                <the-header-main-menu-item
-                    url="receipts"
-                    title="Receipts"
-                ></the-header-main-menu-item>
-            </the-header-main-menu>
-            <the-header-auth-panel
-                login-url="login"
-                login-button-label="Login"
-                register-url="register"
-                register-button-label="Register"
-                logout-url="logout"
-                logout-button-label="Logout"
-                csrf-token="asd"
-            ></the-header-auth-panel>
-        </the-header>
+        <the-header></the-header>
         <the-content></the-content>
         <the-footer></the-footer>
     </div>
@@ -51,9 +19,6 @@ export default {
     components: {
         TheFooter,
         TheContent,
-        TheHeaderAuthPanel,
-        TheHeaderMainMenuItem,
-        TheHeaderMainMenu,
         TheHeader,
     },
 }
