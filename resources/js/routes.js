@@ -29,11 +29,6 @@ export const routes = [
         component: ReceiptsPage,
     },
     {
-        path: '/markets',
-        name: 'markets',
-        component: The404Page,
-    },
-    {
         path: '*',
         name: '404',
         component: The404Page,
