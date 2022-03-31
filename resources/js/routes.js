@@ -1,12 +1,18 @@
 import TheHomePage from './pages/TheHomePage';
 import The404Page from './pages/The404Page';
 import ReceiptsPage from './pages/ReceiptsPage';
+import LoginPage from './pages/auth/LoginPage';
 
 export const routes = [
     {
         path: '/',
         name: 'home',
         component: TheHomePage,
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: LoginPage,
     },
     {
         path: '/markets',

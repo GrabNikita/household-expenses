@@ -21,6 +21,7 @@
     ]));
 </script>
 @yield('content')
+@yield('content2')
 <div id="app-wrapper"></div>
 </body>
 </html>

@@ -1,12 +1,5 @@
 import ObjectTool from '../tools/ObjectTool';
 
-let mockReceipt = {
-    id: 123,
-    purchase_date: '16:12:13 14.02.1000',
-    market: 43543,
-    basket: 768768,
-};
-
 export default  {
     state: (window.serverSideData ? window.serverSideData : {}),
     getters: {
@@ -22,11 +15,13 @@ export default  {
         getAuthed(state) {
             return ObjectTool.isEntity(state.user);
         },
+        getLoginForm(state) {
+            return state.auth.login;
+        },
     },
     actions: {
         loadReceipts(context) {
-            let receipts = [mockReceipt];
-            context.commit('receipts', {data: receipts});
+            context.commit('receipts', {data: []});
         },
     },
     mutations: {
